@@ -1,0 +1,129 @@
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+sethandler <C-C> n-v:ide i:vim
+sethandler <C-V> i:ide
+sethandler <C-S> a:ide
+sethandler <C-Q> a:ide
+sethandler <C-F> a:ide
+sethandler <C-W> n:ide
+
+sethandler <C-H> a:ide
+
+let mapleader = ","
+
+set relativenumber
+set number
+set ignorecase smartcase
+
+set incsearch
+set hlsearch
+nnoremap <esc> :noh<cr><esc>
+
+
+set easymotion
+set surround
+set multiple-cursors
+set commentary
+set ReplaceWithRegister
+set argtextobj
+set exchange
+set textobj-entire
+set highlightedyank
+set vim-paragraph-motion
+Plug 'preservim/nerdtree`
+
+set sneak
+
+set ideajoin
+
+nnoremap <C-r> <C-w>
+nnoremap <leader>sv :source C:\Users\PGanzarcik\.ideavimrc<cr>
+nnoremap <leader>ev :vsplit C:\Users\PGanzarcik\.ideavimrc<cr>
+nnoremap 0 ^
+nnoremap <leader>inc <C-a>
+nnoremap <leader>dec <C-x>
+nnoremap - :action EditorDeleteToWordEnd<cr>
+
+map <C-K><C-M> <Action>(HideAllWindows)
+map <C-K><C-N> <Action>(TabShiftActions.ToggleMaximizeRestore)
+map <C-N> <Action>(GotoClass)
+map <C-K><C-V> <Action>(VimPluginToggle)
+
+map <C-S-[> <Action>(PreviousTab)
+map <C-S-[> <Action>(VimPluginToggle)
+
+map <C-K><C-B> <Action>(Annotate)
+map <C-K><C-K> :NERDTree<cr>
+
+
+" nnoremap s :action EditorNextWord<cr>
+" nnoremap S :action EditorPreviousWord<cr>
+" vnoremap s :action EditorNextWordWithSelection<cr>
+" vnoremap S :action EditorPreviousWordWithSelection<cr>
+
+" easymotion
+nmap \\w <leader><leader>w
+nmap \\W <leader><leader>W
+nmap \\b <leader><leader>b
+nmap \\B <leader><leader>B
+nmap \\j <leader><leader>j
+nmap \\k <leader><leader>k
+nmap <A-d> <leader><leader>f
+nmap <A-s> <leader><leader>F
+
+" tabShifting
+nnoremap <leader>sh :action TabShiftActions.ShiftLeft<cr>
+nnoremap <leader>sl :action TabShiftActions.ShiftRight<cr>
+nnoremap <leader>sj :action TabShiftActions.ShiftDown<cr>
+nnoremap <leader>sk :action TabShiftActions.ShiftUp<cr>
+
+nnoremap <leader>out <leader>out
+" nnoremap <leader>o :action FileStructurePopup<cr>
+nnoremap <leader>bp :action ToggleLineBreakpoint<cr>
+
+
+nnoremap <leader>iw ciw<C-r>0<ESC>
+" nnoremap <C-b> ci(<C-r>0<ESC>
+" nnoremap <C-i> <C-d>
+" nnoremap <Leader>u <C-w>
+" nnoremap <Leader>c ':s/\<\@!\([A-Z]\)/\_\l\1/g<RETURN>gUl'
+"
+" nnoremap = o<esc>k
+" nnoremap + O<esc>j
+"
+" nnoremap <leader>strip dt(lds(e
+" nnoremap <leader>cc ciwcf)
+" nnoremap <leader>dc ciwdf)
+"
+" vnoremap <c-s> <esc>`>a)<esc>`<iCollectionUtils.toStream(<esc>$
+"
+" inoremap <c-u> <esc>hgUiwa
+"
+" ABBREVIATIONS
+inoremap <leader><leader>td // TODO 21.2 PGA implement
+
+" inoremap <leader><leader>ts CollectionUtils.toStream(
+" inoremap <leader><leader>em CollectionUtils.isNotEmpty(
+" inoremap <leader><leader>eq EqualUtils.is(
+" inoremap <leader><leader>et .equalTo(
+" inoremap <leader><leader>tl .collect(Collectors.toList())
+"
+" " insert null check
+" " let @c = 'Oif(<C-r>0<SPACE>!=<SPACE>null)<SPACE>{<ESC>jo}<ESC>'
+" " set DerivedAWDs name
+" let @d = 'f;F.f_lyw0f_pldwjf;bbbb'
+" " set COLUMN name
+" let @c = '0/DESCRIPTOR<RETURN>f_lye0/COLUMN<RETURN>f_lPldwi<SPACE><ESC>j0'
+"
+"
+"
+" set gvimpath="C:\Program Files (x86)\Vim\vim80\gvim.exe"
+"
